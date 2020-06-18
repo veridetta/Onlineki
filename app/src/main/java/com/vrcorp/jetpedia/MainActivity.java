@@ -4,10 +4,16 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
@@ -19,28 +25,98 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    private WebView webView;
+import im.delight.android.webview.AdvancedWebView;
+
+public class MainActivity extends AppCompatActivity implements AdvancedWebView.Listener {
+    private AdvancedWebView webView;
     private TextView txtLoading;
     private ProgressBar pg;
     private RelativeLayout pgLayout;
     int status =0;
     Handler handler = new Handler();
     boolean doubleBackToExitPressedOnce = false;
-    private String halaman="https://jetpedia.id/auth/login";
+    private String halaman="https://jetpedia.id/auth/login", halaman_index="https://jetpedia.id/",
+            halaman_dashboard="https://jetpedia.id/dashboard";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        webView = findViewById(R.id.webview);
+        webView = (AdvancedWebView) findViewById(R.id.webview);
         txtLoading = findViewById(R.id.txt_loading);
         pg = findViewById(R.id.loading);
         pgLayout =findViewById(R.id.loading_content);
-        settings();
-        load_web();
+        webView.setListener(this, (AdvancedWebView.Listener) this);
+        webView.loadUrl(halaman);
+
     }
+    @SuppressLint("NewApi")
+    @Override
+    protected void onResume(){
+     super.onResume();
+     webView.onResume();
+    }
+    @SuppressLint("NewApi")
+    @Override
+    protected void onPause() {
+        webView.onPause();
+        super.onPause();
+    }
+    @SuppressLint("NewApi")
+    @Override
+    protected void onDestroy() {
+        webView.onDestroy();
+        super.onDestroy();
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent){
+        super.onActivityResult(requestCode,resultCode,intent);
+        webView.onActivityResult(requestCode,resultCode,intent);
+    }
+    @Override
+    public void onBackPressed() {
+        if(!webView.onBackPressed()){
+            return;
+        }
+        super.onBackPressed();
+        if (doubleBackToExitPressedOnce) {
+            finishAffinity();
+            System.exit(0);
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
+    @Override
+    public void onPageStarted(String url, Bitmap favicon){
+        pgLayout.setVisibility(View.VISIBLE);
+        pg.setProgress(0);
+        for(int i=0;i<99;i++){
+            txtLoading.setText(i+" %");
+        }
+    }
+    @Override
+    public void onPageFinished(String url){
+        pgLayout.setVisibility(View.GONE);
+    }
+    @Override
+    public void onPageError(int errorCode, String description, String failingUrl){
+        Log.d("Error", "onPageError: "+description+errorCode+failingUrl);
+    }
+    @Override
+    public void onDownloadRequested(String url, String suggestedFilename, String mimType, long contentLength, String contentDisposition, String userAgent){}
+    @Override
+    public void onExternalPageRequest(String url){}
+
     @SuppressLint("SetJavaScriptEnabled")
     private void settings(){
         WebSettings webSettings = webView.getSettings();
@@ -52,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
         webSettings.setEnableSmoothTransition(true);
         webSettings.setDomStorageEnabled(true);
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
     }
     private void load_web(){
         if(Build.VERSION.SDK_INT>=19){
@@ -83,25 +161,18 @@ public class MainActivity extends AppCompatActivity {
                 super.onPageFinished(view, url);
                 pgLayout.setVisibility(View.GONE);
             }
+
+            @Override
+            public void onLoadResource(WebView view, String url) {
+                super.onLoadResource(view, url);
+                Log.d("DUA", "onLoadResource: "+url);
+            }
+
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                handler.proceed();
+            }
         });
         webView.loadUrl(halaman);
-    }
-    @Override
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            finishAffinity();
-            System.exit(0);
-            super.onBackPressed();
-            return;
-        }
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
-            }
-        }, 2000);
     }
 }

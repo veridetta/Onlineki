@@ -8,11 +8,11 @@
     tools:context=".MainActivity">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <WebView
+            <im.delight.android.webview.AdvancedWebView
                 android:id="@+id/webview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
@@ -20,12 +20,12 @@
         <RelativeLayout
             android:id="@+id/loading_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="match_parent"
+            android:background="#ffff">
             <ProgressBar
                 android:id="@+id/loading"
-                android:layout_width="@dimen/_150sdp"
-                android:layout_height="@dimen/_150sdp"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:layout_centerInParent="true"
                 android:indeterminate="false"
                 android:max="100"
@@ -34,11 +34,11 @@
                 android:progressDrawable="@drawable/custom_progressbar"
                 android:secondaryProgress="0" />
             <TextView
-                android:text="Memuat ..."
+                android:text="..."
                 android:id="@+id/txt_loading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_14sdp"
+                android:textSize="@dimen/_12sdp"
                 android:textColor="@color/colorPrimary"
                 android:layout_centerInParent="true"
                 android:textAppearance="?android:attr/textAppearance"/>
