@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -50,6 +51,48 @@ public class MainActivity extends AppCompatActivity implements AdvancedWebView.L
         webView.setListener(this, (AdvancedWebView.Listener) this);
         webView.loadUrl(halaman);
 
+        webView.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                view.loadUrl(request.toString());
+                //pgLayout.setVisibility(View.GONE);
+                pg.setProgress(0);
+                for(int i=0;i<99;i++){
+                    Handler handler=new Handler();
+                    final int finalI = i;
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            pg.setProgress(finalI);
+                            txtLoading.setText(finalI +" %");
+                        }
+                    },500 * i);
+                }
+                return true;
+            }
+            @Override
+            public void onLoadResource(WebView view, String url) {
+                pg.setProgress(0);
+                for(int i=0;i<99;i++){
+                    Handler handler=new Handler();
+                    final int finalI = i;
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            pg.setProgress(finalI);
+                            txtLoading.setText(finalI +" %");
+                        }
+                    },500 * i);
+                }
+                super.onLoadResource(view, url);
+                Log.d("DUA", "onLoadResource: "+url);
+            }
+
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                handler.cancel();
+            }
+        });
     }
     @SuppressLint("NewApi")
     @Override
@@ -101,7 +144,15 @@ public class MainActivity extends AppCompatActivity implements AdvancedWebView.L
         pgLayout.setVisibility(View.VISIBLE);
         pg.setProgress(0);
         for(int i=0;i<99;i++){
-            txtLoading.setText(i+" %");
+            Handler handler=new Handler();
+            final int finalI = i;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    pg.setProgress(finalI);
+                    txtLoading.setText(finalI +" %");
+                }
+            },500 * i);
         }
     }
     @Override
@@ -115,7 +166,10 @@ public class MainActivity extends AppCompatActivity implements AdvancedWebView.L
     @Override
     public void onDownloadRequested(String url, String suggestedFilename, String mimType, long contentLength, String contentDisposition, String userAgent){}
     @Override
-    public void onExternalPageRequest(String url){}
+    public void onExternalPageRequest(String url){
+        pgLayout.setVisibility(View.VISIBLE);
+        pg.setProgress(0);
+    }
 
     @SuppressLint("SetJavaScriptEnabled")
     private void settings(){
@@ -164,13 +218,15 @@ public class MainActivity extends AppCompatActivity implements AdvancedWebView.L
 
             @Override
             public void onLoadResource(WebView view, String url) {
+                pg.setProgress(1);
+                txtLoading.setText(1+" %");
                 super.onLoadResource(view, url);
                 Log.d("DUA", "onLoadResource: "+url);
             }
 
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-                handler.proceed();
+                handler.cancel();
             }
         });
         webView.loadUrl(halaman);

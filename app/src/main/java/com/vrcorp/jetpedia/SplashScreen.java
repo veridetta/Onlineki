@@ -21,12 +21,11 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 Intent belumLogin = new Intent(SplashScreen.this, MainActivity.class);
                 //intent.putExtra(EXTRA_MESSAGE, message);
-                belumLogin.putExtra("CEK_LOGIN", "tidak");
-                Toast.makeText(SplashScreen.this, "Harap Login Dahulu!",
+                Toast.makeText(SplashScreen.this, "Welcome!",
                         Toast.LENGTH_LONG).show();
                 startActivity(belumLogin);
             }
-        },2000);
+        },3000);
     }
     @Override
     public void onBackPressed() {
