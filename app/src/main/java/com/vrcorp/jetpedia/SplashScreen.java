@@ -19,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
         new android.os.Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent belumLogin = new Intent(SplashScreen.this, MainActivity.class);
+                Intent belumLogin = new Intent(SplashScreen.this, MenuActivity.class);
                 //intent.putExtra(EXTRA_MESSAGE, message);
                 Toast.makeText(SplashScreen.this, "Welcome!",
                         Toast.LENGTH_LONG).show();

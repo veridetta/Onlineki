@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements AdvancedWebView.L
         pg.setProgress(0);
         for(int i=0;i<99;i++){
             Handler handler=new Handler();
-            final int finalI = i;
+                        final int finalI = i;
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {

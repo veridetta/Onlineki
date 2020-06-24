@@ -7,8 +7,8 @@ android {
         applicationId "com.vrcorp.jetpedia"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 101
-        versionName "1.01"
+        versionCode 1011
+        versionName "1.011"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -28,4 +28,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.github.delight-im:Android-AdvancedWebView:v3.0.0'
+    //implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 }

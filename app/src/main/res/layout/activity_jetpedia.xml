@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JetpediaActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/_300sdp"
+                android:layout_height="@dimen/_300sdp" android:background="@drawable/splash"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_220sdp"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Panel SMM dab PPOB Terlengkap dan Termurah"
+                android:singleLine="false"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="#606060"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jetpedia adalah aplikasi penyedia layanan PPOB pulsa all operator seperti kebutuhan paket data, Token PLN, Voucher Game, ,Saldo Grab/Gojek."
+                android:textSize="@dimen/_11sdp"
+                android:textColor="#606060" />
+            <TextView
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selain itu Jetpedia juga menyediakan layanan panel SMM Sosial Media Marketing seperti jasa penambah Followers, Likes, Subscriber, dll."
+                android:textSize="@dimen/_11sdp"
+                android:textColor="#606060" />
+            <TextView
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Layanan untuk social media terpopuler seperti Instagram, Facebok, Twitter, Youtube, dll."
+                android:textSize="@dimen/_11sdp"
+                android:textColor="#606060" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
