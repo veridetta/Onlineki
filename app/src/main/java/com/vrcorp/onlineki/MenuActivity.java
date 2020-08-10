@@ -1,4 +1,4 @@
-package com.vrcorp.jetpedia;
+package com.vrcorp.onlineki;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;

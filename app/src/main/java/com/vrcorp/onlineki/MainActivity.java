@@ -1,22 +1,19 @@
-package com.vrcorp.jetpedia;
+package com.vrcorp.onlineki;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -36,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements AdvancedWebView.L
     int status =0;
     Handler handler = new Handler();
     boolean doubleBackToExitPressedOnce = false;
-    private String halaman="https://jetpedia.id/auth/login", halaman_index="https://jetpedia.id/",
-            halaman_dashboard="https://jetpedia.id/dashboard";
+    private String halaman="https://onlineki.id/auth/login", halaman_index="https://onlineki.id/",
+            halaman_dashboard="https://onlineki.id/dashboard";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

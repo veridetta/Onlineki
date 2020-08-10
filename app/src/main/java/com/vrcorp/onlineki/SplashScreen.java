@@ -1,4 +1,4 @@
-package com.vrcorp.jetpedia;
+package com.vrcorp.onlineki;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +19,14 @@ public class SplashScreen extends AppCompatActivity {
         new android.os.Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent belumLogin = new Intent(SplashScreen.this, MenuActivity.class);
+                PrefManager prefManager = new PrefManager(getApplicationContext());
+                if (!prefManager.isFirstTimeLaunch()) {
+
+                }else{
+                    prefManager.setFirstTimeLaunch(true);
+                }
+
+                Intent belumLogin = new Intent(SplashScreen.this, WelcomeActivity.class);
                 //intent.putExtra(EXTRA_MESSAGE, message);
                 Toast.makeText(SplashScreen.this, "Welcome!",
                         Toast.LENGTH_LONG).show();

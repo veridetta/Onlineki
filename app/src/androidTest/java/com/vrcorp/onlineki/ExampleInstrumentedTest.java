@@ -1,4 +1,4 @@
-package com.vrcorp.jetpedia;
+package com.vrcorp.onlineki;
 
 import android.content.Context;
 

@@ -15,8 +15,8 @@
             android:layout_height="wrap_content">
             <ImageView
 
-                android:layout_width="@dimen/_300sdp"
-                android:layout_height="@dimen/_300sdp" android:background="@drawable/splash"/>
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_250sdp" android:background="@drawable/splashlogo"/>
         </LinearLayout>
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/_30sdp"
+            android:paddingLeft="@dimen/_12sdp"
+            android:paddingRight="@dimen/_12sdp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:background="@drawable/slide1"/>
+            <TextView
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_22sdp"
+                android:textStyle="bold"
+                android:text="Harga Termurah"/>
+            <TextView
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_16sdp"
+                android:text="Voucher Game dan Pulsa Murah"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="@dimen/_18sdp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    app:cardBackgroundColor="#E057FF"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:cardPreventCornerOverlap="true" />
+                <androidx.cardview.widget.CardView
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:alpha="0.5"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    app:cardBackgroundColor="#C3C0BE"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:cardPreventCornerOverlap="true" />
+                <androidx.cardview.widget.CardView
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:alpha="0.5"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    app:cardBackgroundColor="#C3C0BE"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:cardPreventCornerOverlap="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

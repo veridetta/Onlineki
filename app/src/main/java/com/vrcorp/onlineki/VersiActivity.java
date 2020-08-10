@@ -1,16 +1,16 @@
-package com.vrcorp.jetpedia;
+package com.vrcorp.onlineki;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class KontakActivity extends AppCompatActivity {
+public class VersiActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kontak);
+        setContentView(R.layout.activity_versi);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
     }
