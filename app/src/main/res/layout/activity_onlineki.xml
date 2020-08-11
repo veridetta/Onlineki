@@ -41,7 +41,7 @@
                 android:layout_marginTop="@dimen/_6sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Onlineki adalah aplikasi penyedia layanan PPOB pulsa all operator seperti kebutuhan paket data, Token PLN, Voucher Game, ,Saldo Grab/Gojek."
+                android:text="Onlineki.id adalah aplikasi penyedia layanan PPOB pulsa all operator seperti kebutuhan paket data, Token PLN, Voucher Game, ,Saldo Grab/Gojek."
                 android:textSize="@dimen/_11sdp"
                 android:textColor="#606060" />
             <TextView
