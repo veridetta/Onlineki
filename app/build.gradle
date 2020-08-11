@@ -1,10 +1,11 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.vrcorp.jetpedia"
+        applicationId "com.vrcorp.onlineki"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 10111
@@ -26,6 +27,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.github.delight-im:Android-AdvancedWebView:v3.0.0'
     //implementation 'com.google.android.material:material:1.1.0'

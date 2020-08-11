@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "499086216348",
+    "firebase_url": "https://onlineki.firebaseio.com",
+    "project_id": "onlineki",
+    "storage_bucket": "onlineki.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499086216348:android:866bcebf4a1e34e54e3159",
+        "android_client_info": {
+          "package_name": "com.vrcorp.onlineki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499086216348-0v4e7ndjrufsql340j47rrl9nqvhlkqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWeIiChHR0n0TpTjEGHKB0lGi1NMRsJ1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499086216348-0v4e7ndjrufsql340j47rrl9nqvhlkqv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -22,7 +22,7 @@ public class MenuActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         akses = findViewById(R.id.bukaAkses);
-        jetpedia = findViewById(R.id.jetpedia);
+        jetpedia = findViewById(R.id.onlineki);
         kontak = findViewById(R.id.kontak);
         versi = findViewById(R.id.versi);
 
@@ -57,7 +57,7 @@ public class MenuActivity extends AppCompatActivity {
             startActivity(intent);
         }
         if (aktif.equals("jetpedia")){
-            Intent intent = new Intent(MenuActivity.this, JetpediaActivity.class);
+            Intent intent = new Intent(MenuActivity.this, OnlinekiActivity.class);
             startActivity(intent);
         }
         if (aktif.equals("kontak")){

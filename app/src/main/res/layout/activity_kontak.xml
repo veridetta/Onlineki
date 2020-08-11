@@ -11,23 +11,22 @@
         android:layout_height="match_parent"
         android:background="#ffffff">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:background="#ffffff"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="@dimen/_300sdp"
-                android:layout_height="@dimen/_300sdp" android:background="@drawable/splash"/>
-        </LinearLayout>
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_220sdp"
+            android:layout_marginTop="@dimen/_130sdp"
             android:paddingLeft="@dimen/_20sdp"
             android:paddingRight="@dimen/_20sdp"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="#ffffff">
+                <ImageView
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:background="@drawable/logo"/>
+            </LinearLayout>
             <TextView
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_width="wrap_content"
@@ -79,7 +78,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="jetpedia.id"
+                        android:text="onlineki.id"
                         android:textSize="@dimen/_11sdp"
                         android:layout_gravity="center"
                         android:textColor="#606060"

@@ -11,20 +11,21 @@
         android:layout_height="match_parent"
         android:background="#ffffff">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-40dp"
-            android:background="#ffffff">
-            <ImageView
-                android:layout_width="@dimen/_300sdp"
-                android:layout_height="@dimen/_300sdp" android:background="@drawable/splash"/>
-        </LinearLayout>
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_250sdp"
+            android:layout_marginTop="@dimen/_130sdp"
             android:orientation="vertical"
             android:background="#ffffff">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="#ffffff">
+                <ImageView
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:background="@drawable/logo"/>
+            </LinearLayout>
             <LinearLayout
                 android:background="#ffffff"
                 android:layout_width="match_parent"
@@ -35,7 +36,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" Selamat datang di aplikasi JetPedia "
+                    android:text=" Selamat datang di aplikasi Onlineki "
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="bold"
                     android:layout_gravity="center"
@@ -101,7 +102,7 @@
                     android:layout_gravity="center"
                     android:gravity="center">
                     <LinearLayout
-                        android:id="@+id/jetpedia"
+                        android:id="@+id/onlineki"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -125,7 +126,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Je"
+                                    android:text="On"
                                     android:textSize="@dimen/_12sdp"
                                     android:textColor="#ffffff"
                                     android:textStyle="bold" />
@@ -134,7 +135,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Apa itu \n Jetpedia"
+                            android:text="Apa itu \n Onlineki"
                             android:textSize="@dimen/_11sdp"
                             android:layout_gravity="center"
                             android:textColor="#606060"
