@@ -8,8 +8,8 @@ android {
         applicationId "com.vrcorp.onlineki"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 10111
-        versionName "1.0111"
+        versionCode 10113
+        versionName "1.0113"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
