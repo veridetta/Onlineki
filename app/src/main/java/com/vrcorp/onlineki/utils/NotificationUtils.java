@@ -63,7 +63,7 @@ public class NotificationUtils {
             if (iconUrl != null) {
                 iconBitMap = getBitmapFromURL(iconUrl);
             }
-            final int icon = R.drawable.logo;
+            final int icon = R.drawable.logonotifs;
 
             PendingIntent resultPendingIntent;
 
@@ -124,8 +124,8 @@ public class NotificationUtils {
                         .setContentTitle(title)
                         .setContentIntent(resultPendingIntent)
                         .setStyle(bigPictureStyle)
-                        .setSmallIcon(R.drawable.logo)
-                        .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.logo))
+                        .setSmallIcon(R.drawable.logonotifs)
+                        .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.logonotifs))
                         .setContentText(message)
                         .build();
             }
